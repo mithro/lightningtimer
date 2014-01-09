@@ -3,13 +3,16 @@
 <html>
 <head>
 <title>Lightning Timer</title>
-<!-- By Simon Willison - http://simonwillison.net/2008/Nov/12/lightning/ -->
+<!-- 
+  Originally By Simon Willison - http://simonwillison.net/2008/Nov/12/lightning/ 
+  Additional changes by Tim 'mithro' Ansell - http://blog.mithis.net/
+-->
 <script type="text/javascript">
 // Default settings: 5 minutes, warning at 1 minute
 var count = 5 * 60;
 var warning = 60;
 
-window.onload = function() {
+function settime() {
     // Can optionally set count and warning in the url
     // e.g. http://www.lightningtimer.net/#30,15 = 30 seconds, warning at 15
     //      http://www.lightningtimer.net/#300 = 5 minutes, no warning
@@ -23,12 +26,21 @@ window.onload = function() {
     if (match && !match[2]) {
         warning = -1; // Disable warning
     }
+}
+
+if ("onhashchange" in window) {
+    window.onhashchange = settime;
+}
+
+window.onload = function() {
+    settime();
+
     document.getElementById('countdown').onclick = function() {
         this.onclick = null;
         countdown();
     }
     document.getElementById('countdown').style.cursor = 'pointer';
-}
+};
 
 function countdown() {
     if (count > 0) {
