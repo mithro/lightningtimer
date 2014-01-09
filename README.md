@@ -6,11 +6,15 @@ A web based lightning talk timer available at the following URLs;
  * lightningtimer.cc
  * lightningtimer.io
 
-You can optionally set the seconds to count down from and warning time in the
-url,
+### Usage
 
-e.g. http://www.lightningtimer.net/#30,15 = 30 seconds, warning at 15
-     http://www.lightningtimer.net/#300 = 5 minutes, no warning
+You can optionally set the seconds to count down from and warning time in the
+url.
+
+#### Examples
+
+30 seconds, warning at 15 -- http://lightningtimer.io/#30,15  
+5 minutes, no warning -- http://lightningtimer.io/#300
 
 ## Origin
 
