@@ -2,9 +2,9 @@
 
 A web based lightning talk timer available at the following URLs;
 
- * lightningtimer.info
- * lightningtimer.cc
- * lightningtimer.io
+ * http://lightningtimer.io
+ * http://lightningtimer.info
+ * http://lightningtimer.cc
 
 ### Usage
 
